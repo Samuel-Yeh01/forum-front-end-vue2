@@ -1,15 +1,22 @@
 <template>
   <div id="restaurant-forum">
-    <router-view />
+    <Navbar />
+    <main role="main" class="mt-5 bg-white">
+      <router-view />
+    </main>
   </div>
 </template>
 
-// 載入 Bootstrap JS 檔案
 <script>
+// 載入 Bootstrap JS 檔案
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+// 註冊元件
+import Navbar from "./components/Navbar";
 export default {
-  name: "App",
+  components: {
+    Navbar,
+  },
 };
 </script>
 
