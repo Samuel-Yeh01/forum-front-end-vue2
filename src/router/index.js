@@ -53,6 +53,8 @@ const routes = [
 ];
 
 const router = new VueRouter({
+  // 透過 <router-link> 自動幫連結加上特定的 class 樣式是很方便的，只是一般在 Bootstrap 中，要讓頁籤看起來是「當前頁籤」的樣式，需要加上的 class 是 .active 而不是 .router-link-exact-active。
+  // 只要設定 linkExactActiveClass 屬性，改成想添加的 class 名稱為何就可以了。
   linkExactActiveClass: "active",
   routes,
 });

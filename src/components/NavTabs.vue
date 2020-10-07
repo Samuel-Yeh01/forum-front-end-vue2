@@ -1,5 +1,6 @@
 <template>
   <ul class="nav nav-tabs mb-4">
+    <!-- 在建立 v-for 時，採用 uuid v4，拿來當成 key 屬性。 -->
     <li v-for="tab in tabs" :key="tab.id" class="nav-item">
       <router-link :to="tab.path" class="nav-link">
         {{ tab.title }}
