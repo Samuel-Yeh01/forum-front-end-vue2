@@ -9,6 +9,9 @@
 </template>
 
 <script>
+// 在實務上，我們習慣在使用 v-for 時，為元素添加一個不重覆的 key 屬性，給予 Vue 一個提示，讓他能夠運用 key 值來追蹤節點。
+// 然後我們會搭配 uuid 這個套件來幫忙產生獨一無二的識別碼，拿來當成 key 屬性。
+// 動作：npm install uuid
 import { v4 as uuidv4 } from "uuid";
 export default {
   data() {
