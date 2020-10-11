@@ -9,10 +9,16 @@
         :key="comment.id"
       >
         <h4>
-          <a href="#">{{ comment.User.name }}</a>
+          <a href="#">        
+            {{ comment.Restaurant }}
+          </a>
           &nbsp;
         </h4>
         <p>{{ comment.text }}</p>
+        by 
+        <a href="#">
+          {{comment.User.name}}
+        </a> 
         {{ comment.createdAt | fromNow }}
         <hr>
       </div>

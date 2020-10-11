@@ -251,7 +251,7 @@ const dummydata = {
         createdAt: "2020-09-28T16:35:57.000Z",
         updatedAt: "2020-10-06T03:08:56.000Z",
       },
-      Restaurant: null,
+      Restaurant: "Victorian",
     },
     {
       id: 5542,
@@ -271,7 +271,7 @@ const dummydata = {
         createdAt: "2020-09-28T16:35:57.000Z",
         updatedAt: "2020-10-06T03:08:56.000Z",
       },
-      Restaurant: null,
+      Restaurant: "yummy",
     },
     {
       id: 5532,
@@ -291,7 +291,7 @@ const dummydata = {
         createdAt: "2020-09-28T16:35:57.000Z",
         updatedAt: "2020-10-06T03:08:56.000Z",
       },
-      Restaurant: null,
+      Restaurant: "Germy",
     },
     {
       id: 5522,
@@ -311,7 +311,7 @@ const dummydata = {
         createdAt: "2020-09-28T16:35:57.000Z",
         updatedAt: "2020-10-06T03:08:56.000Z",
       },
-      Restaurant: null,
+      Restaurant: "Decent",
     },
     {
       id: 5512,
@@ -331,7 +331,7 @@ const dummydata = {
         createdAt: "2020-09-28T16:35:57.000Z",
         updatedAt: "2020-10-06T03:08:56.000Z",
       },
-      Restaurant: null,
+      Restaurant: "Tesnack",
     },
     {
       id: 5502,
@@ -351,7 +351,7 @@ const dummydata = {
         createdAt: "2020-09-28T16:35:57.000Z",
         updatedAt: "2020-10-06T03:08:56.000Z",
       },
-      Restaurant: null,
+      Restaurant: "Masyale",
     },
     {
       id: 5492,
@@ -371,7 +371,7 @@ const dummydata = {
         createdAt: "2020-09-28T16:35:57.000Z",
         updatedAt: "2020-10-06T03:08:56.000Z",
       },
-      Restaurant: null,
+      Restaurant: "COLALA",
     },
     {
       id: 5482,
@@ -391,11 +391,11 @@ const dummydata = {
         createdAt: "2020-09-28T16:35:57.000Z",
         updatedAt: "2020-10-06T03:08:56.000Z",
       },
-      Restaurant: null,
+      Restaurant: "Holiday",
     },
     {
       id: 5472,
-      text: "     ",
+      text: "test comment1",
       UserId: 1,
       RestaurantId: null,
       createdAt: "2020-10-08T06:21:32.000Z",
@@ -411,11 +411,11 @@ const dummydata = {
         createdAt: "2020-09-28T16:35:57.000Z",
         updatedAt: "2020-10-06T03:08:56.000Z",
       },
-      Restaurant: null,
+      Restaurant:"Delicious Western",
     },
     {
       id: 5462,
-      text: "    ",
+      text: "test comment2",
       UserId: 1,
       RestaurantId: null,
       createdAt: "2020-10-08T06:19:48.000Z",
@@ -431,7 +431,7 @@ const dummydata = {
         createdAt: "2020-09-28T16:35:57.000Z",
         updatedAt: "2020-10-06T03:08:56.000Z",
       },
-      Restaurant: null,
+      Restaurant: "Bunuolin",
     },
   ],
 };
@@ -457,7 +457,8 @@ export default {
       // fetch API
       const { restaurants, comments } = dummydata;
       this.restaurants = restaurants;
-      this.comments = comments;
+      // this.comments = comments;
+      this.comments = comments.filter(comment => comment.Restaurant && comment.text)
     },
   },
 };
