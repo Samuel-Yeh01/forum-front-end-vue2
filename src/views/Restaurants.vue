@@ -4,6 +4,7 @@
     <!-- 餐廳類別標籤 RestaurantsNavPills -->
     <!--    父層 Restaurants 引入子元件 -->
     <NavTabs />
+    <RestaurantsNavPills :categories="categories"/>
     <div class="row">
       <!-- 餐廳卡片 RestaurantCard-->
       <!--    父層 Restaurants 引入子元件 -->
@@ -19,6 +20,7 @@
 <script>
 import NavTabs from "./../components/NavTabs";
 import RestaurantCard from "./../components/RestaurantCard"
+import RestaurantsNavPills from "./../components/RestaurantsNavPills"
 const dummyData = {
   restaurants: [
     // ... 需貼上 Postman 的回傳內容
@@ -294,6 +296,7 @@ export default {
   components: {
     NavTabs,
     RestaurantCard,
+    RestaurantsNavPills,
   },
   data () {
     return {
