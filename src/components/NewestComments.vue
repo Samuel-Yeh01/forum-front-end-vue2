@@ -4,45 +4,35 @@
       最新評論
     </div>
     <div class="card-body">
-      <div
-        v-for="comment in comments"
-        :key="comment.id"
-      >
+      <div v-for="comment in comments" :key="comment.id">
         <h4>
-          <a href="#">        
+          <a href="#">
             {{ comment.Restaurant }}
           </a>
           &nbsp;
         </h4>
         <p>{{ comment.text }}</p>
-        by 
+        by
         <a href="#">
-          {{comment.User.name}}
-        </a> 
+          {{ comment.User.name }}
+        </a>
         {{ comment.createdAt | fromNow }}
-        <hr>
+        <hr />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import moment from 'moment';
+// 載入撰寫好的 mixin
+import { fromNowFilter } from "./../utils/mixins";
 export default {
-  filters:{
-    fromNow(datetime) {
-      if (!datetime) {
-        return "-"
-      }
-      // 使用 moment 提供的 fromNow 方法
-      return moment(datetime).fromNow()
-    }
-  },
+  mixins: [fromNowFilter],
   props: {
     comments: {
       type: Array,
-      required: true
-    }
-  }
-}
+      required: true,
+    },
+  },
+};
 </script>

@@ -39,6 +39,12 @@ const routes = [
     component: () => import("../views/RestaurantsTop.vue"),
   },
   {
+    path: "/restaurants/:id",
+    // 用 :id 來定義動態路徑參數 (dynamic segment) ，表示這是動態的路由，id 的部分可以是任何有效的網址內容。在 Vue 物件裡，可以再透過 this.$router.params 來取得網址上的 :id。
+    name: "restaurant",
+    component: () => import("../views/Restaurant.vue"),
+  },
+  {
     path: "/users/top",
     name: "users-top",
     component: () => import("../views/UsersTop.vue"),

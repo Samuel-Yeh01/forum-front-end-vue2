@@ -7,12 +7,19 @@
         alt="Card image cap"
         width="286px"
         height="180px"
-      >
+      />
       <div class="card-body">
         <p class="card-text title-wrap">
-          <a href="#">{{ restaurant.name }}</a>
+          <!-- 改成 router-link，這樣連結才能點進去到 detail 頁面 -->
+          <router-link
+            :to="{ name: 'restaurant', params: { id: restaurant.id } }"
+          >
+            {{ restaurant.name }}
+          </router-link>
         </p>
-        <span class="badge badge-secondary">{{ restaurant.Category.name }}</span>
+        <span class="badge badge-secondary">{{
+          restaurant.Category.name
+        }}</span>
         <p class="card-text text-truncate">
           {{ restaurant.description }}
         </p>
@@ -60,39 +67,39 @@ export default {
   props: {
     initialRestaurant: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
-  data () {
+  data() {
     return {
-      restaurant: this.initialRestaurant
-    }
+      restaurant: this.initialRestaurant,
+    };
   },
   methods: {
-    addFavorite () {
+    addFavorite() {
       this.restaurant = {
         ...this.restaurant, // 保留餐廳內原有資料
-        isFavorited: true
-      }
+        isFavorited: true,
+      };
     },
-    deleteFavorite () {
+    deleteFavorite() {
       this.restaurant = {
         ...this.restaurant, // 保留餐廳內原有資料
-        isFavorited: false
-      }
+        isFavorited: false,
+      };
     },
-    addLike () {
+    addLike() {
       this.restaurant = {
         ...this.restaurant, // 保留餐廳內原有資料
-        isLiked: true
-      }
+        isLiked: true,
+      };
     },
-    deleteLike () {
+    deleteLike() {
       this.restaurant = {
         ...this.restaurant, // 保留餐廳內原有資料
-        isLiked: false
-      }
-    }
-  }
-}
+        isLiked: false,
+      };
+    },
+  },
+};
 </script>
