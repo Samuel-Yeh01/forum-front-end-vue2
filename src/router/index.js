@@ -55,6 +55,11 @@ const routes = [
     component: () => import("../views/UsersTop.vue"),
   },
   {
+    path: "/users/:id",
+    name: "user",
+    component: () => import("../views/User.vue"),
+  },
+  {
     // 由於 Vue Router 路由會由上往下進行匹配，所以當路由一條條解析下來，所有的路由都無法匹配，最後就會匹配到 path: '*'，星號 (*) 是萬用字元，這裡代表「所有的網址」，也就是說不管使用者輸入什麼，只要找不到對應網頁，最後就會返回 NotFound 這個頁面。
     // 相反的，若使用者輸入的網址是 /about 時，因為由上往下解析時，跑到 path: '/about' 的地方就匹配成功了，因此就不會再往下。
     path: "*",
