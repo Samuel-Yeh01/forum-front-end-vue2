@@ -15,6 +15,7 @@
         </h4>
         <p>{{ comment.text }}</p>
         by
+        <!-- update links of user -->
         <router-link :to="{ name: 'user', params: { id: comment.User.id } }">
           {{ comment.User.name }}
         </router-link>

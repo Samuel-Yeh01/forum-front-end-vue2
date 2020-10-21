@@ -15,6 +15,7 @@
           Delete
         </button>
         <h3>
+          <!-- update links of user -->
           <router-link :to="{ name: 'user', params: { id: comment.User.id } }">
             {{ comment.User.name }}
           </router-link>
