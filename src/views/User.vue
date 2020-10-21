@@ -14,6 +14,7 @@
         <!-- UserFollowingsCard -->
         <UserFollowingsCard :followings="followings" />
         <!-- UserFollowersCard -->
+        <UserFollowersCard :followers="followers" />
       </div>
       <div class="col-md-8">
         <!-- UserCommentsCard -->
@@ -25,8 +26,11 @@
 </template>
 
 <script>
+// 在 User 中引入子元件
 import UserProfileCard from "./../components/UserProfileCard";
 import UserFollowingsCard from "./../components/UserFollowingsCard";
+import UserFollowersCard from "./../components/UserFollowersCard";
+
 // 建立一份暫存資料 dummyData
 const dummyData = {
   profile: {
@@ -1048,9 +1052,11 @@ const dummyUser = {
 };
 export default {
   name: "User",
+  // 從 User 傳入資料給子元件
   components: {
     UserProfileCard,
     UserFollowingsCard,
+    UserFollowersCard,
   },
   // 建立 data 函式，並定義資料。(內部結構：參考 dummyData 的內部架構)
   data() {
