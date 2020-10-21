@@ -18,8 +18,11 @@
       </div>
       <div class="col-md-8">
         <!-- UserCommentsCard -->
-
+        <UserCommentsCard :comments="comments" />
         <!-- UserFavoritedRestaurantsCard -->
+        <UserFavoritedRestaurantsCard
+          :favorited-restaurants="favoritedRestaurants"
+        />
       </div>
     </div>
   </div>
@@ -30,6 +33,8 @@
 import UserProfileCard from "./../components/UserProfileCard";
 import UserFollowingsCard from "./../components/UserFollowingsCard";
 import UserFollowersCard from "./../components/UserFollowersCard";
+import UserCommentsCard from "./../components/UserCommentsCard";
+import UserFavoritedRestaurantsCard from "./../components/UserFavoritedRestaurantsCard";
 
 // 建立一份暫存資料 dummyData
 const dummyData = {
@@ -1057,6 +1062,8 @@ export default {
     UserProfileCard,
     UserFollowingsCard,
     UserFollowersCard,
+    UserCommentsCard,
+    UserFavoritedRestaurantsCard,
   },
   // 建立 data 函式，並定義資料。(內部結構：參考 dummyData 的內部架構)
   data() {
@@ -1117,7 +1124,14 @@ export default {
       this.followings = Followings;
       this.followers = Followers;
       this.favoritedRestaurants = FavoritedRestaurants;
-      this.comments = Comments.filter((comment) => comment.Restaurant);
+      // TODO: 重新思考為什麼需要這樣寫?
+      const commentSet = new Set();
+      this.comments = Comments.filter(
+        (comment) =>
+          comment.Restaurant &&
+          !commentSet.has(comment.Restaurant.id) &&
+          commentSet.add(comment.Restaurant.id)
+      );
     },
   },
 };
