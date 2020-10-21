@@ -12,7 +12,7 @@
     <div class="row">
       <div class="col-md-4">
         <!-- UserFollowingsCard -->
-
+        <UserFollowingsCard :followings="followings" />
         <!-- UserFollowersCard -->
       </div>
       <div class="col-md-8">
@@ -26,6 +26,7 @@
 
 <script>
 import UserProfileCard from "./../components/UserProfileCard";
+import UserFollowingsCard from "./../components/UserFollowingsCard";
 // 建立一份暫存資料 dummyData
 const dummyData = {
   profile: {
@@ -1049,6 +1050,7 @@ export default {
   name: "User",
   components: {
     UserProfileCard,
+    UserFollowingsCard,
   },
   // 建立 data 函式，並定義資料。(內部結構：參考 dummyData 的內部架構)
   data() {
